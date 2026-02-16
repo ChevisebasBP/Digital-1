@@ -17,7 +17,7 @@ El sistema está dividido en cuatro módulos aritméticos independientes:
 
 ## 📂 Módulos
 
-### ✖ 1. [Multiplicador](Calculadora/Modulo Multiplicador/)
+### ✖ 1. [Multiplicador](Calculadora/ModuloMultiplicador/)
 Diseño de un multiplicador binario utilizando lógica estructural en Verilog.
 
 ### ➗ 2. Divisor
