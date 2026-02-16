@@ -35,5 +35,8 @@ Cada módulo puede ser probado de manera independiente mediante su respectivo te
 
 ## 👨‍💻 Autor
 
-Sebastian Bohorquez  
+Sebastian Bohorquez Parra
+
 Ingeniería Eléctrica
+
+Universidad Nacional de Colombia 
