@@ -7,7 +7,7 @@ Este módulo implementa un multiplicador binario secuencial basado en el algorit
 
 # 📊 1. Diagrama Algorítmico
 
-![Diagrama Algorítmico](Diagrama.jng)
+![Diagrama Algorítmico](Diagrama.jpg)
 
 Este primer diagrama representa el funcionamiento del algoritmo de manera escrita y secuencial. En él se describe paso a paso cómo se realiza la multiplicación binaria, comenzando con la inicialización del acumulador, la verificación del bit menos significativo del multiplicador y la ejecución de los corrimientos correspondientes.
 
