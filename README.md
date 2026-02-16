@@ -10,7 +10,7 @@ Repositorio correspondiente a la asignatura **Electrónica Digital I**, donde se
 
 ---
 
-# 🧮 Trabajo 1: Calculadora Digital
+# 🧮 Trabajo 1: [Calculadora](Calculadora/)
 
 Diseño e implementación de una calculadora digital modular.  
 El sistema está dividido en cuatro módulos aritméticos independientes:
