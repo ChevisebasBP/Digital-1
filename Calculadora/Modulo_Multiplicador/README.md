@@ -34,3 +34,115 @@ A continuación se describe el significado de las principales señales y element
 
 Este diagrama ya refleja directamente la estructura que posteriormente será implementada en el módulo en Verilog.
 
+---
+
+## 🧪 Ejemplo de Funcionamiento (formato del diagrama)  
+### Multiplicación: 1111 × 1010
+
+Se toma:
+
+- A = 1111₂
+- B = 1010₂
+
+Inicialización del sistema:
+
+- DONE = 0
+- count = 16
+- Z = 00000000000000000000000000000000
+- A_process = 00000000000000000000000000001111   (zero_extend de A)
+- B_process = 0000000000001010
+
+---
+
+### 🔁 Iteración 1
+
+LSB(B_process) = 0  
+
+No se realiza suma.
+
+Corrimientos:
+- A_process = A_process << 1 → 00000000000000000000000000011110
+- B_process = B_process >> 1 → 0000000000000101
+- count = 15
+
+Z permanece:
+- Z = 00000000000000000000000000000000
+
+---
+
+### 🔁 Iteración 2
+
+LSB(B_process) = 1  
+
+Se realiza suma:
+- Z = Z + A_process
+- Z = 00000000000000000000000000000000 + 00000000000000000000000000011110
+- Z = 00000000000000000000000000011110
+
+Corrimientos:
+- A_process = A_process << 1 → 00000000000000000000000000111100
+- B_process = B_process >> 1 → 0000000000000010
+- count = 14
+
+---
+
+### 🔁 Iteración 3
+
+LSB(B_process) = 0  
+
+No se realiza suma.
+
+Corrimientos:
+- A_process = A_process << 1 → 00000000000000000000000001111000
+- B_process = B_process >> 1 → 0000000000000001
+- count = 13
+
+Z permanece:
+- Z = 00000000000000000000000000011110
+
+---
+
+### 🔁 Iteración 4
+
+LSB(B_process) = 1  
+
+Se realiza suma:
+- Z = Z + A_process
+- Z = 00000000000000000000000000011110 + 00000000000000000000000001111000
+- Z = 00000000000000000000000010010110
+
+Corrimientos:
+- A_process = A_process << 1 → 00000000000000000000000011110000
+- B_process = B_process >> 1 → 0000000000000000
+- count = 12
+
+---
+
+### 🔁 Iteraciones 5 a 16 (B_process ya es 0)
+
+Como B_process = 0, entonces:
+- LSB(B_process) = 0 en todas las iteraciones restantes
+- No se realizan más sumas
+- Solo continúan los corrimientos y el decremento de count
+
+Z se mantiene constante:
+- Z = 00000000000000000000000010010110
+
+count sigue bajando:
+- 12 → 11 → 10 → ... → 0
+
+---
+
+### ✅ Finalización
+
+count == 0  
+
+- DONE = 1
+- Resultado final en Z:
+
+Z = 00000000000000000000000010010110₂
+
+(En 8 bits: 10010110₂)  
+Equivalente en decimal: 15 × 10 = 150
+
+
