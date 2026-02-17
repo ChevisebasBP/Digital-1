@@ -20,7 +20,7 @@ El sistema está dividido en cuatro módulos aritméticos independientes:
 ### ✖ 1. [Multiplicador](Calculadora/Modulo_Multiplicador/README.md)
 Diseño de un multiplicador binario utilizando lógica estructural en Verilog.
 
-### ➗ 2. Divisor
+### ➗ 2. [Divisor](Calculadora/Modulo_Divisor/README.md)
 
 
 Cada módulo puede ser probado de manera independiente mediante su respectivo testbench.
