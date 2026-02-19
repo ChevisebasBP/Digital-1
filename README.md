@@ -1,12 +1,6 @@
-# 📘 Digital I
 
-Repositorio correspondiente a la asignatura **Electrónica Digital I**, donde se desarrollan proyectos orientados al diseño e implementación de sistemas digitales utilizando lógica combinacional y secuencial.
 
----
-
-## 🎯 Objetivos del curso
-
-???
+El Repositorio corresponde a la asignatura **Electrónica Digital I**, donde se desarrollan proyectos orientados al diseño e implementación de sistemas digitales utilizando lógica combinacional y secuencial.
 
 ---
 
@@ -27,13 +21,14 @@ Cada módulo puede ser probado de manera independiente mediante su respectivo te
 
 ---
 
-# 🚀 Trabajo 2: Proyecto 
+# 1️⃣ Trabajo 2: Chequeo de Paridad
 
 
+# 🎯 Trabajo 3: Proyecto
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 Sebastian Bohorquez Parra
 
