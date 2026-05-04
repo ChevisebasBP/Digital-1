@@ -13,9 +13,9 @@ Luego se da una estructura más cercana a la implementación en Verilog, separan
 
 ![Diagrama Algorítmico](Diagrama.jpg)
 
-Este primer diagrama representa el funcionamiento del algoritmo de manera escrita y secuencial. En él se describe paso a paso cómo se realiza la multiplicación binaria, comenzando con la inicialización del acumulador, la verificación del bit menos significativo del multiplicador y la ejecución de los corrimientos correspondientes.
+El primer diagrama representa el funcionamiento del algoritmo de manera escrita y secuencial (con correcciones dichas en la misma Clase).
 
-Este esquema permite entender claramente cómo debe comportarse el sistema antes de implementarlo en código, e incluye los puntos clave discutidos en clase.
+En él se describe paso a paso cómo se realiza la multiplicación binaria, comenzando con la inicialización del acumulador, la verificación del bit menos significativo del multiplicador y la ejecución de los corrimientos correspondientes.
 
 ---
 
@@ -23,9 +23,7 @@ Este esquema permite entender claramente cómo debe comportarse el sistema antes
 
 ![Diagrama Definitivo](Diagrama_2.png)
 
-Este segundo diagrama representa la versión estructurada del sistema, ya muy cercana a la implementación final en código Verilog.
-
-A continuación se describe el significado de las principales señales y elementos del diagrama:
+Este segundo diagrama representa la versión estructurada del sistema, cercana a la implementación en código Verilog.
 
 - **A_process**: Registro que almacena el multiplicando y se desplaza a la izquierda en cada iteración.
 - **B_process**: Registro que almacena el multiplicador y se desplaza a la derecha para evaluar el bit menos significativo.
@@ -36,11 +34,10 @@ A continuación se describe el significado de las principales señales y element
 - **<< 1**: Operación de corrimiento lógico a la izquierda.
 - **>> 1**: Operación de corrimiento lógico a la derecha.
 
-Este diagrama ya refleja directamente la estructura que posteriormente será implementada en el módulo en Verilog.
-
 ---
 
-## 🧪 Ejemplo de Funcionamiento (formato del diagrama)  
+## 🧪 Ejemplo de Funcionamiento 
+
 ### Multiplicación: 1111 × 1010
 
 Se toma:
