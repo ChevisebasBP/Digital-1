@@ -1,7 +1,10 @@
 
-Este módulo implementa un multiplicador binario secuencial basado en el algoritmo de productos parciales. 
-El diseño sigue el enfoque visto en clase
-Primero se define el funcionamiento del algoritmo de manera conceptual
+Este módulo implementa un multiplicador binario secuencial basado en el algoritmo de productos parciales.
+
+El diseño sigue el enfoque visto en clase.
+
+Primero se define el funcionamiento del algoritmo de manera conceptual.
+
 Luego se da una estructura más cercana a la implementación en Verilog, separando claramente el comportamiento lógico del sistema y su arquitectura final.
 
 ---
