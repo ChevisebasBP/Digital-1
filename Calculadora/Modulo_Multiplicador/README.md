@@ -21,7 +21,7 @@ En él se describe paso a paso cómo se realiza la multiplicación binaria, come
 
 # 🏗 2. Diagrama Definitivo del Sistema
 
-![Diagrama Definitivo](Diagrama_2.png)
+![Diagrama Definitivo](Diagrama_2.jpg)
 
 Este segundo diagrama representa la versión estructurada del sistema, cercana a la implementación en código Verilog.
 
