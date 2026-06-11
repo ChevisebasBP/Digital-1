@@ -78,22 +78,22 @@ module Periferico_Divisor (
         end
     end
 
-    always @(*) begin
+    
+
+    always @(posedge clk) begin
         if (reset) begin
-            d_out = 32'b0;
+            d_out <= 32'b0;
         end
         else if (cs && rd) begin
-            case (s)
-                6'b001000: d_out = Resultado_reg;
-                6'b010000: d_out = Residuo_reg;
-                6'b100000: d_out = {31'b0, DONE_reg};
-                default:   d_out = 32'b0;
+            case (addr)
+                5'h10: d_out <= Resultado_reg;
+                5'h14: d_out <= Residuo_reg;
+                5'h18: d_out <= {31'b0, DONE_reg};
+                default: d_out <= 32'b0;
             endcase
         end
-        else begin
-            d_out = 32'b0;
-        end
     end
+
 
     TOP_Divisor #(
         .width(31)

@@ -1,0 +1,681 @@
+$date
+	Wed Jun 10 13:06:08 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Testbench_Periferico_Multiplicador $end
+$var wire 32 ! d_out [31:0] $end
+$var reg 5 " addr [4:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ cs $end
+$var reg 16 % d_in [15:0] $end
+$var reg 1 & rd $end
+$var reg 1 ' reset $end
+$var reg 1 ( wr $end
+$scope module uut $end
+$var wire 5 ) addr [4:0] $end
+$var wire 1 # clk $end
+$var wire 1 $ cs $end
+$var wire 16 * d_in [15:0] $end
+$var wire 1 & rd $end
+$var wire 1 ' reset $end
+$var wire 1 ( wr $end
+$var wire 32 + Resultado_top [31:0] $end
+$var wire 1 , DONE_top $end
+$var reg 16 - A [15:0] $end
+$var reg 16 . B [15:0] $end
+$var reg 1 / DONE_status $end
+$var reg 32 0 Resultado_status [31:0] $end
+$var reg 32 1 d_out [31:0] $end
+$var reg 1 2 init $end
+$var reg 5 3 s [4:0] $end
+$scope module u_mult $end
+$var wire 16 4 A [15:0] $end
+$var wire 16 5 B [15:0] $end
+$var wire 32 6 Resultado [31:0] $end
+$var wire 1 # clk $end
+$var wire 1 2 init $end
+$var wire 1 ' reset $end
+$var wire 5 7 count_out [4:0] $end
+$var wire 32 8 Z_out [31:0] $end
+$var wire 1 9 SH $end
+$var wire 1 : LSB_B_process $end
+$var wire 1 ; LD $end
+$var wire 1 , DONE $end
+$var wire 1 < DEC $end
+$var wire 1 = C $end
+$var wire 16 > B_process_out [15:0] $end
+$var wire 32 ? A_process_out [31:0] $end
+$var wire 1 @ ADD_EN $end
+$scope module A_process_inst $end
+$var wire 16 A A [15:0] $end
+$var wire 1 # clk $end
+$var wire 1 9 SH $end
+$var wire 1 ; LD $end
+$var reg 32 B A_process_out [31:0] $end
+$upscope $end
+$scope module B_process_inst $end
+$var wire 16 C B [15:0] $end
+$var wire 1 # clk $end
+$var wire 1 9 SH $end
+$var wire 1 : LSB_B_process $end
+$var wire 1 ; LD $end
+$var reg 16 D B_process_out [15:0] $end
+$upscope $end
+$scope module Comp_count_inst $end
+$var wire 5 E count_out [4:0] $end
+$var wire 1 = C $end
+$upscope $end
+$scope module Control_inst $end
+$var wire 1 = C $end
+$var wire 1 : LSB_B_process $end
+$var wire 1 # clk $end
+$var wire 1 2 init $end
+$var wire 1 ' reset $end
+$var parameter 3 F S_ADD $end
+$var parameter 3 G S_CHECK $end
+$var parameter 3 H S_END $end
+$var parameter 3 I S_SHIFT $end
+$var parameter 3 J S_START $end
+$var reg 1 @ ADD_EN $end
+$var reg 1 < DEC $end
+$var reg 1 , DONE $end
+$var reg 1 ; LD $end
+$var reg 1 9 SH $end
+$var reg 6 K count_done [5:0] $end
+$var reg 3 L state [2:0] $end
+$upscope $end
+$scope module Count_inst $end
+$var wire 1 < DEC $end
+$var wire 1 ; LD $end
+$var wire 1 # clk $end
+$var reg 5 M count_out [4:0] $end
+$upscope $end
+$scope module Z_inst $end
+$var wire 1 @ ADD_EN $end
+$var wire 32 N A_process_out [31:0] $end
+$var wire 1 ; LD $end
+$var wire 1 # clk $end
+$var reg 32 O Z_out [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b0 J
+b11 I
+b100 H
+b1 G
+b10 F
+$end
+#0
+$dumpvars
+bx O
+bx N
+bx M
+b0 L
+b0 K
+bx E
+bx D
+bx C
+bx B
+bx A
+0@
+bx ?
+bx >
+x=
+0<
+1;
+x:
+09
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+b0 3
+x2
+bx 1
+bx 0
+x/
+bx .
+bx -
+0,
+bx +
+b0 *
+b0 )
+0(
+1'
+0&
+b0 %
+0$
+0#
+b0 "
+bx !
+$end
+#5000
+b0xxxxxxxxxxxxxxxx ?
+b0xxxxxxxxxxxxxxxx B
+b0xxxxxxxxxxxxxxxx N
+b0 +
+b0 6
+b0 8
+b0 O
+0=
+b10000 7
+b10000 E
+b10000 M
+02
+b0 .
+b0 5
+b0 C
+b0 -
+b0 4
+b0 A
+0/
+b0 0
+b0 !
+b0 1
+1#
+#10000
+0#
+#15000
+0:
+b0 >
+b0 D
+b0 ?
+b0 B
+b0 N
+1#
+#20000
+0#
+0'
+#25000
+b1 3
+b1101 %
+b1101 *
+b100 "
+b100 )
+1(
+1$
+1#
+#30000
+0#
+#35000
+b1101 -
+b1101 4
+b1101 A
+b0 3
+0(
+0$
+1#
+#40000
+0#
+#45000
+b1101 ?
+b1101 B
+b1101 N
+b10 3
+b10000 %
+b10000 *
+b1000 "
+b1000 )
+1(
+1$
+1#
+#50000
+0#
+#55000
+b10000 .
+b10000 5
+b10000 C
+b0 3
+0(
+0$
+1#
+#60000
+0#
+#65000
+b10000 >
+b10000 D
+b100 3
+b1 %
+b1 *
+b1100 "
+b1100 )
+1(
+1$
+1#
+#70000
+0#
+#75000
+12
+b0 3
+0(
+0$
+1#
+#80000
+0#
+#85000
+0;
+b1 L
+1#
+#90000
+0#
+#95000
+1<
+19
+b11 L
+1#
+#100000
+0#
+#105000
+0<
+09
+b11010 ?
+b11010 B
+b11010 N
+b1000 >
+b1000 D
+b1111 7
+b1111 E
+b1111 M
+b1 L
+1#
+#110000
+0#
+#115000
+1<
+19
+b11 L
+b100 3
+b0 %
+b0 *
+1(
+1$
+1#
+#120000
+0#
+#125000
+0<
+09
+b110100 ?
+b110100 B
+b110100 N
+b100 >
+b100 D
+b1110 7
+b1110 E
+b1110 M
+b1 L
+b0 3
+0(
+0$
+1#
+#130000
+0#
+#135000
+1<
+19
+b11 L
+1#
+#140000
+0#
+#145000
+0<
+09
+b1101000 ?
+b1101000 B
+b1101000 N
+b10 >
+b10 D
+b1101 7
+b1101 E
+b1101 M
+b1 L
+1#
+#150000
+0#
+#155000
+1<
+19
+b11 L
+1#
+#160000
+0#
+#165000
+1:
+0<
+09
+b11010000 ?
+b11010000 B
+b11010000 N
+b1 >
+b1 D
+b1100 7
+b1100 E
+b1100 M
+b1 L
+1#
+#170000
+0#
+#175000
+1@
+b10 L
+1#
+#180000
+0#
+#185000
+1<
+19
+0@
+b11010000 +
+b11010000 6
+b11010000 8
+b11010000 O
+b11 L
+1#
+#190000
+0#
+#195000
+0:
+0<
+09
+b1011 7
+b1011 E
+b1011 M
+b0 >
+b0 D
+b110100000 ?
+b110100000 B
+b110100000 N
+b1 L
+1#
+#200000
+0#
+#205000
+1<
+19
+b11 L
+1#
+#210000
+0#
+#215000
+0<
+09
+b1010 7
+b1010 E
+b1010 M
+b1101000000 ?
+b1101000000 B
+b1101000000 N
+b1 L
+1#
+#220000
+0#
+#225000
+1<
+19
+b11 L
+1#
+#230000
+0#
+#235000
+0<
+09
+b1001 7
+b1001 E
+b1001 M
+b11010000000 ?
+b11010000000 B
+b11010000000 N
+b1 L
+1#
+#240000
+0#
+#245000
+1<
+19
+b11 L
+1#
+#250000
+0#
+#255000
+0<
+09
+b1000 7
+b1000 E
+b1000 M
+b110100000000 ?
+b110100000000 B
+b110100000000 N
+b1 L
+1#
+#260000
+0#
+#265000
+1<
+19
+b11 L
+1#
+#270000
+0#
+#275000
+0<
+09
+b111 7
+b111 E
+b111 M
+b1101000000000 ?
+b1101000000000 B
+b1101000000000 N
+b1 L
+1#
+#280000
+0#
+#285000
+1<
+19
+b11 L
+1#
+#290000
+0#
+#295000
+0<
+09
+b110 7
+b110 E
+b110 M
+b11010000000000 ?
+b11010000000000 B
+b11010000000000 N
+b1 L
+1#
+#300000
+0#
+#305000
+1<
+19
+b11 L
+1#
+#310000
+0#
+#315000
+0<
+09
+b101 7
+b101 E
+b101 M
+b110100000000000 ?
+b110100000000000 B
+b110100000000000 N
+b1 L
+1#
+#320000
+0#
+#325000
+1<
+19
+b11 L
+1#
+#330000
+0#
+#335000
+0<
+09
+b100 7
+b100 E
+b100 M
+b1101000000000000 ?
+b1101000000000000 B
+b1101000000000000 N
+b1 L
+1#
+#340000
+0#
+#345000
+1<
+19
+b11 L
+1#
+#350000
+0#
+#355000
+0<
+09
+b11 7
+b11 E
+b11 M
+b11010000000000000 ?
+b11010000000000000 B
+b11010000000000000 N
+b1 L
+1#
+#360000
+0#
+#365000
+1<
+19
+b11 L
+1#
+#370000
+0#
+#375000
+0<
+09
+b10 7
+b10 E
+b10 M
+b110100000000000000 ?
+b110100000000000000 B
+b110100000000000000 N
+b1 L
+1#
+#380000
+0#
+#385000
+1<
+19
+b11 L
+1#
+#390000
+0#
+#395000
+0<
+09
+b1 7
+b1 E
+b1 M
+b1101000000000000000 ?
+b1101000000000000000 B
+b1101000000000000000 N
+b1 L
+1#
+#400000
+0#
+#405000
+1<
+19
+b11 L
+1#
+#410000
+0#
+#415000
+0<
+09
+1=
+b0 7
+b0 E
+b0 M
+b11010000000000000000 ?
+b11010000000000000000 B
+b11010000000000000000 N
+b1 L
+1#
+#420000
+0#
+#425000
+1,
+b100 L
+1#
+#430000
+0#
+#435000
+1/
+b11010000 0
+b1 K
+1#
+#440000
+0#
+#445000
+b1 !
+b1 1
+b10 K
+b10000 3
+b10100 "
+b10100 )
+1&
+1$
+1#
+#450000
+0#
+#455000
+b11 K
+b0 3
+0&
+0$
+1#
+#460000
+0#
+#465000
+b100 K
+b1000 3
+b10000 "
+b10000 )
+1&
+1$
+1#
+#470000
+0#
+#475000
+b101 K
+b0 3
+0&
+0$
+1#
+#480000
+0#
+#485000
+b110 K
+1#
+#490000
+0#
+#495000
+b111 K
+1#

@@ -26,6 +26,7 @@ module SOC (
    wire [31:0] Raiz_dout;
    wire [31:0] BinarioBCD_dout;
    wire [31:0] BCDBinario_dout;
+   
 
    FemtoRV32 CPU (
       .clk(clk),
@@ -120,6 +121,7 @@ module SOC (
       .d_out(BCDBinario_dout)
    );
 
+
    always @(*) begin
       case (mem_addr[31:16])
          16'h0000: cs = 8'b00000001; // RAM
@@ -128,7 +130,8 @@ module SOC (
          16'h0042: cs = 8'b00001000; // Raiz
          16'h0043: cs = 8'b00000100; // Divisor
          16'h0044: cs = 8'b00000010; // Multiplicador
-         16'h0045: cs = 8'b10000000; // BCD a Binario
+         16'h0045: cs = 8'b01000000; // dpRAM
+         16'h0046: cs = 8'b10000000; // BCD a Binario
          default:  cs = 8'b00000001; // RAM
       endcase
    end

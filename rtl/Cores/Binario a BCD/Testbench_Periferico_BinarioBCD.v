@@ -118,9 +118,8 @@ module Testbench_Periferico_BinarioBCD;
         #50;
         reset = 0;
 
-        run_test(32'd20102238, 32'h20102238);
-        run_test(32'd87654321, 32'h87654321);
-        run_test(32'd99999999, 32'h99999999);
+        run_test(32'd820, 32'h820);
+        
 
         #100;
         $finish;

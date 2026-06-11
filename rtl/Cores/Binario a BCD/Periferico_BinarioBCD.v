@@ -68,21 +68,21 @@ module Periferico_BinarioBCD (
         end
     end
 
-    always @(*) begin
+
+
+    always @(posedge clk) begin
         if (reset) begin
-            d_out = 32'b0;
+            d_out <= 32'b0;
         end
         else if (cs && rd) begin
-            case (s)
-                4'b0100: d_out = BCD_reg;
-                4'b1000: d_out = {31'b0, DONE_reg};
-                default: d_out = 32'b0;
+            case (addr)
+                5'h0C: d_out <= BCD_reg;
+                5'h10: d_out <= {31'b0, DONE_reg};
+                default: d_out <= 32'b0;
             endcase
         end
-        else begin
-            d_out = 32'b0;
-        end
     end
+
 
     TOP_BinarioBCD U_TOP_BINBCD (
         .clk(clk),

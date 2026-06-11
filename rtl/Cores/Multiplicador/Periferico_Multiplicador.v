@@ -93,33 +93,17 @@ module Periferico_Multiplicador (
     end
 
     // Lectura hacia el procesador
-    always @(*) begin
-
+    always @(posedge clk) begin
         if (reset) begin
-            d_out = 32'b0;
+            d_out <= 32'b0;
         end
-
         else if (cs && rd) begin
-
-            case (s)
-
-                5'b01000:
-                    d_out = Resultado_status;
-
-                5'b10000:
-                    d_out = {31'b0, DONE_status};
-
-                default:
-                    d_out = 32'b0;
-
+            case (addr)
+                5'h10: d_out <= Resultado_status;
+                5'h14: d_out <= {31'b0, DONE_status};
+                default: d_out <= 32'b0;
             endcase
-
         end
-
-        else begin
-            d_out = 32'b0;
-        end
-
     end
 
     // Instancia del multiplicador

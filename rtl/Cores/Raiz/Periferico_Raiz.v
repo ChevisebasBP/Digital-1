@@ -70,26 +70,26 @@ module Periferico_Raiz (
                 DONE_status      <= 1'b1;
 
 `ifdef BENCH
-                $display("RAIZ DONE: Resultado=%d Residuo=%d time=%0t",
-                         Resultado_wire, Residuo_wire, $time);
+                
 `endif
             end
         end
     end
 
-    always @(*) begin
-        if (cs && rd) begin
-            case (s)
-                5'b00100: d_out = {16'b0, Resultado_status};
-                5'b01000: d_out = Residuo_status;
-                5'b10000: d_out = {31'b0, DONE_status};
-                default:  d_out = 32'b0;
+    always @(posedge clk) begin
+        if (reset) begin
+        d_out <= 32'b0;
+        end
+        else if (cs && rd) begin
+            case (addr)
+                5'h0C: d_out <= {16'b0, Resultado_status};
+                5'h10: d_out <= Residuo_status;
+                5'h14: d_out <= {31'b0, DONE_status};
+                default: d_out <= 32'b0;
             endcase
         end
-        else begin
-            d_out = 32'b0;
-        end
     end
+
 
     TOP_Raiz U_TOP_RAIZ (
         .clk(clk),

@@ -29,7 +29,7 @@ module Testbench_Periferico_BCDbinario;
         input [4:0] address;
         input [31:0] data;
         begin
-            @(posedge clk);
+            @(negedge clk);
             cs   = 1;
             wr   = 1;
             rd   = 0;
@@ -37,8 +37,11 @@ module Testbench_Periferico_BCDbinario;
             d_in = data;
 
             @(posedge clk);
+
+            @(negedge clk);
             cs   = 0;
             wr   = 0;
+            rd   = 0;
             addr = 5'h00;
             d_in = 32'h00000000;
         end
@@ -48,20 +51,22 @@ module Testbench_Periferico_BCDbinario;
         input [4:0] address;
         output [31:0] data;
         begin
-            @(posedge clk);
+            @(negedge clk);
             cs   = 1;
             rd   = 1;
             wr   = 0;
             addr = address;
 
+            @(posedge clk);
             #1;
             data = d_out;
 
-            @(posedge clk);
+            @(negedge clk);
             cs   = 0;
             rd   = 0;
+            wr   = 0;
             addr = 5'h00;
-        end
+            end
     endtask
 
     task run_test;
