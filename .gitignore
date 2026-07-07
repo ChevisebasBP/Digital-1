@@ -1,0 +1,9 @@
+*.vcd
+*.vvp
+*.o
+*.out
+*.bin
+*.hex
+*.elf
+*.lst
+sim/

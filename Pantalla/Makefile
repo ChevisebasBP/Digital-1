@@ -3,8 +3,8 @@
 EFINITY_HOME  = /home/carlos/Embedded/efinity/2023.2/
 EFXPT_HOME    = $(EFINITY_HOME)/pt
 
-TARGET=SOC
-TOP=SOC
+TARGET=Pantalla
+TOP=Pantalla
 
 ECP5_SIM_CELLS  = $(shell yosys-config --datdir/ecp5/cells_sim.v)
 ECP5_SIM_CELLS += $(shell yosys-config --datdir/ecp5/cells_bb.v)
@@ -29,63 +29,30 @@ endif
 
 TCL_SCRIPT = auto_generated.tcl
 
-TB=bench_quark
+TB=Pantalla_TB
 
-COMM_OBJS= Cores/CPU/femtorv32_quark.v
-COMM_OBJS+= Cores/Uart/perip_uart.v
-COMM_OBJS+= Cores/Uart/uart.v
+COMM_OBJS= Timer_ws2812/comp_timer_ws2812.v
+COMM_OBJS+= Timer_ws2812/Control_Timer_WS2812.v
+COMM_OBJS+= Timer_ws2812/count_out.v
+COMM_OBJS+= Timer_ws2812/mux_timer_ws2812.v
+COMM_OBJS+= Timer_ws2812/Timer_WS2812.v
 
-COMM_OBJS+= Cores/Multiplicador/A_process_Multiplicador.v
-COMM_OBJS+= Cores/Multiplicador/B_process_Multiplicador.v
-COMM_OBJS+= Cores/Multiplicador/Comp_count_Multiplicador.v
-COMM_OBJS+= Cores/Multiplicador/Control_Multiplicador.v
-COMM_OBJS+= Cores/Multiplicador/Count_Mulplicador.v
-COMM_OBJS+= Cores/Multiplicador/Periferico_Multiplicador.v
-COMM_OBJS+= Cores/Multiplicador/TOP_Multiplicador.v
-COMM_OBJS+= Cores/Multiplicador/Z.v
+COMM_OBJS+= WS2812_led/Control_WS2812_LED.v
+COMM_OBJS+= WS2812_led/Count_24.v
+COMM_OBJS+= WS2812_led/LSR_RGB.v
+COMM_OBJS+= WS2812_led/WS2812_led.v
 
-COMM_OBJS+= Cores/Divisor/A_process_Divisor.v
-COMM_OBJS+= Cores/Divisor/B_process_Divisor.v
-COMM_OBJS+= Cores/Divisor/Comp_count_Divisor.v
-COMM_OBJS+= Cores/Divisor/Control_Divisor.v
-COMM_OBJS+= Cores/Divisor/Count_Divisior.v
-COMM_OBJS+= Cores/Divisor/Periferico_Divisor.v
-COMM_OBJS+= Cores/Divisor/Restador.v
-COMM_OBJS+= Cores/Divisor/Resultado.v
-COMM_OBJS+= Cores/Divisor/TOP_Divisor.v
-COMM_OBJS+= Cores/Divisor/vAux.v
+COMM_OBJS+= WS2812_Led_Array/Comp_Addr.v
+COMM_OBJS+= WS2812_Led_Array/Control_WS2812_Led_Array.v
+COMM_OBJS+= WS2812_Led_Array/Count_Addr.v
+COMM_OBJS+= WS2812_Led_Array/Image_0.v
+COMM_OBJS+= WS2812_Led_Array/Image_1.v
+COMM_OBJS+= WS2812_Led_Array/Image_2.v
+COMM_OBJS+= WS2812_Led_Array/Image_3.v
+COMM_OBJS+= WS2812_Led_Array/Led_Mem.v
+COMM_OBJS+= WS2812_Led_Array/WS2812_Led_Array.v
 
-COMM_OBJS+= Cores/Raiz/A_process_Raiz.v
-COMM_OBJS+= Cores/Raiz/B_process_Raiz.v
-COMM_OBJS+= Cores/Raiz/Comp_count_Raiz.v
-COMM_OBJS+= Cores/Raiz/Control_Raiz.v
-COMM_OBJS+= Cores/Raiz/Count_Raiz.v
-COMM_OBJS+= Cores/Raiz/Periferico_Raiz.v
-COMM_OBJS+= Cores/Raiz/Radicando_process.v
-COMM_OBJS+= Cores/Raiz/Restador.v
-COMM_OBJS+= Cores/Raiz/TMP.v
-COMM_OBJS+= Cores/Raiz/TOP_Raiz.v
-
-COMM_OBJS+= Cores/Binario\ a\ BCD/A_process_BinarioBCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/BCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/Comparador_BCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/Comp_count_BinarioBCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/Control_BinarioBCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/Count_BinarioBCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/Periferico_BinarioBCD.v
-COMM_OBJS+= Cores/Binario\ a\ BCD/TOP_BinarioBCD.v
-
-COMM_OBJS+= Cores/BCD\ a\ Binario/BCD_process_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/Binario_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/Comparador_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/Comp_count_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/Control_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/Count_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/Periferico_BCDbinario.v
-COMM_OBJS+= Cores/BCD\ a\ Binario/TOP_BCDbinario.v
-
-OBJS =  SOC.v
-OBJS += Cores/Bram/bram.v
+OBJS =  Pantalla.v
 OBJS += $(COMM_OBJS)
 
 FLASH_OBJS =  $(COMM_OBJS)
@@ -98,10 +65,12 @@ BUILD_DIR = build
 all: sim_quark
 
 sim_quark:
-	rm -f a.out *.vcd
-	iverilog -DBENCH  bench_quark.v $(OBJS)
-	vvp a.out
-	gtkwave bench.vcd
+	rm -f a.out *.vcd *.vvp
+	iverilog -g2012 -DBENCH -s $(TB) -o $(TB).vvp $(TB).v $(OBJS)
+	vvp $(TB).vvp
+	gtkwave $(TB).vcd
+
+sim_pantalla: sim_quark
 
 sim_quark_flash:
 	rm -f a.out *.vcd
@@ -123,12 +92,12 @@ sim_post_syn_quark:  $(OBJS)
 
 #	         yosys -v3 -p  'abc -dff; read_verilog $(OBJS); abc -keepff ;  synth_ecp5  -top $(TARGET); write_verilog $(TOP)_synth.v' -l ${TARGET}.rpt
 	yosys -v3 -l synth.log -p ' synth_ecp5 -top $(TOP) -json $(TOP).json; write_verilog -attr2comment $(TOP)_synth.v' ${OBJS}
-	iverilog -g2012 -DSYNTH -o $@_PS.vpp -s bench  bench_quark.v $(TOP)_synth.v $(ECP5_SIM_CELLS)
+	iverilog -g2012 -DSYNTH -o $@_PS.vpp -s $(TB)  $(TB).v $(TOP)_synth.v $(ECP5_SIM_CELLS)
 #	yosys -v3  -p ' read_verilog $(OBJS);  synth_ice40  -top $(TARGET); write_verilog $(TOP)_synth.v' -l ${TARGET}.rpt
-#	iverilog -g2012 -DSYNTH -o $@_PS.vpp -s bench  bench_quark.v $(TOP)_synth.v $(ICE40_SIM_CELLS)
+#	iverilog -g2012 -DSYNTH -o $@_PS.vpp -s $(TB)  $(TB).v $(TOP)_synth.v $(ICE40_SIM_CELLS)
 
 	vvp $@_PS.vpp
-	gtkwave bench.vcd &
+	gtkwave $(TB).vcd &
 
 sim_post_syn_quark_efx:  $(OBJS)
 	rm -f *vpp *.vcd
@@ -151,7 +120,7 @@ configure: ${TARGET}.fs
 #  LATTICE COLORLIGHT 5A
 ########################
 $(TARGET)_out.config: $(TARGET).json
-	nextpnr-ecp5 --json $(BUILD_DIR)/$< --lpf $(TARGET).lpf --textcfg $(BUILD_DIR)/$@ --25k --package CABGA256 --speed 6  --timing-allow-fail --seed 1 --lpf-allow-unconstrained  --log $(TARGET)_pnr.log 
+	nextpnr-ecp5 --json $(BUILD_DIR)/$< --lpf $(TARGET).lpf --textcfg $(BUILD_DIR)/$@ --25k --package CABGA381 --speed 6  --timing-allow-fail --seed 1 --lpf-allow-unconstrained  --log $(TARGET)_pnr.log 
 #	nextpnr-ecp5 --json $< --lpf $(TARGET).lpf --textcfg $@ --25k --package CABGA381 --speed 6  --timing-allow-fail --seed 1 --lpf-allow-unconstrained
 $(TARGET).json: $(OBJS)
 	mkdir -p $(BUILD_DIR)
@@ -371,3 +340,19 @@ configure_tang_primer_25k: $(TCL_SCRIPT)
 #export QT_QPA_PLATFORM_PLUGIN_PATH=/Work/CAD/IDE/Programmer/bin/PyQt5/qt-plugins
 #export QT_QPA_PLATFORM=xcb
 #export QT_XCB_GL_INTEGRATION=none
+
+clean:
+	rm -rf build
+	rm -f *.vcd
+	rm -f *.vvp
+	rm -f a.out
+	rm -f synth.log
+	rm -f *.log
+	rm -f *.rpt
+	rm -f *.json
+	rm -f *.config
+	rm -f *.bit
+	rm -f *.svf
+	rm -f *_out.config
+
+.PHONY: clean
