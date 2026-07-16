@@ -1,5 +1,6 @@
 module mux_timer_ws2812 (
     input  wire [1:0]  SEL_TIM,
+    
     output reg  [10:0] mux_out
 );
 

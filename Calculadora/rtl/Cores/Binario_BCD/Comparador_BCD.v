@@ -1,5 +1,6 @@
 module Comparador_BCD (
     input [31:0] BCD_in,
+    
     output [7:0] M_digit,
     output M
 );

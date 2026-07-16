@@ -4,6 +4,7 @@ module Radicando_process (
     input ld_init,
     input sh,
     input [31:0] A,
+    
     output [1:0] bits_bajan
 );
 

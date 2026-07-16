@@ -6,6 +6,7 @@ module A_process_Raiz (
     input lda2,
     input [1:0] bits_bajan,
     input [31:0] resta,
+    
     output reg [31:0] A_out
 );
 

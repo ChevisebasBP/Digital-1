@@ -4,6 +4,7 @@ module LSR_RGB (
     input             LD,
     input             SH,
     input      [23:0] RGB,
+    
     output     [23:0] RGB_OUT,
     output            RGB_MSB
 );

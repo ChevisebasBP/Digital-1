@@ -1,5 +1,6 @@
 module TMP (
     input [15:0] B_in,
+    
     output [31:0] TMP_out
 );
 

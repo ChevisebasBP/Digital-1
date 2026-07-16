@@ -2,6 +2,7 @@ module Periferico_Multiplicador (
     input clk,
     input reset,
 
+
     input [15:0] d_in,
     input cs,
     input [4:0] addr,
@@ -10,7 +11,6 @@ module Periferico_Multiplicador (
 
     output reg [31:0] d_out
 );
-
     // Selector interno de registros
     reg [4:0] s;
 
@@ -19,7 +19,7 @@ module Periferico_Multiplicador (
     reg [15:0] B;
     reg init;
 
-    // Salidas directas del TOP_Multiplicador
+    // Salidas directas del TOP
     wire [31:0] Resultado_top;
     wire DONE_top;
 

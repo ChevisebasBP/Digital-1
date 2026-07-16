@@ -5,6 +5,7 @@ module BCD (
     input ADD3,
     input MSB_A,
     input [7:0] M_digit,
+    
     output reg [31:0] BCD_out
 );
 

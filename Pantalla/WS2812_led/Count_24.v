@@ -3,6 +3,7 @@ module Count_24 (
     input        reset,
     input        LD,
     input        DEC,
+    
     output       Z,
     output [4:0] COUNT
 );

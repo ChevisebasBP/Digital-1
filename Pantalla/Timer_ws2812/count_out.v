@@ -3,6 +3,7 @@ module count_out (
     input  wire        reset,
     input  wire        RST,
     input  wire        INC,
+    
     output reg  [10:0] count_out
 );
 

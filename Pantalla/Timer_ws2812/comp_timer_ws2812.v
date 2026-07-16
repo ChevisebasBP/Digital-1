@@ -1,6 +1,7 @@
 module comp_timer_ws2812 (
     input  wire [10:0] count_out,
     input  wire [10:0] mux_out,
+    
     output wire        Z
 );
 

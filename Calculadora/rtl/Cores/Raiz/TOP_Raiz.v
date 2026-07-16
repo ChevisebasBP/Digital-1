@@ -55,7 +55,6 @@ module TOP_Raiz (
         .clk(clk),
         .rst(rst),
         .ld_init(ld_init),
-        .sh(sh),
         .r0(r0),
         .lsb_b(lsb_b),
         .B_out(B_process_out)

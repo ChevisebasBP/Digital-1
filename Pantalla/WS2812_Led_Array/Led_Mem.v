@@ -3,6 +3,7 @@ module Led_Mem #(
 )(
     input  [ADDR_WIDTH-1:0] ADDR,
     input  [3:0] IMG_SEL,
+    
     output reg [23:0] RGB
 );
 

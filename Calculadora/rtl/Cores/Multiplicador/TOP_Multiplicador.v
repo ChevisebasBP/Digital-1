@@ -1,13 +1,11 @@
 module TOP_Multiplicador (
 
     input reset,
-    input clk, // Reloj
+    input clk, 
     input init,
 
 
-
-// Multiplicando
-    input [15:0] A,
+    input [15:0] A, // Multiplicando
 
     input [15:0] B, // Multiplicador
 
@@ -16,21 +14,22 @@ module TOP_Multiplicador (
     output DONE
 );
 
-// Señales 
+
+// Señales in modulos
 wire LD;
 wire ADD_EN;
 wire SH;
 wire DEC;
 
+// Señales out modulos
 wire LSB_B_process;
 wire C;
 
+// Señales internas
 wire [31:0] A_process_out;
 wire [15:0] B_process_out;
 wire [31:0] Z_out;
-
 wire [4:0] count_out;
-
 
 
 
@@ -92,4 +91,5 @@ Control_Multiplicador Control_inst (
 
 
 assign Resultado = Z_out;
+
 endmodule

@@ -3,6 +3,7 @@ module A_process_BinarioBCD (
     input LD,
     input SH,
     input [31:0] A,
+    
     output reg [31:0] A_out,
     output MSB_A
 );

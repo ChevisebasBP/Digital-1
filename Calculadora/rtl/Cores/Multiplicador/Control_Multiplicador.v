@@ -80,7 +80,7 @@ module Control_Multiplicador (
         end
     end
 
-// LÓGICA DE SALIDAS
+// Logica de los estados
 
     always @(*) begin
 

@@ -2,9 +2,9 @@ module B_process_Raiz (
     input clk,
     input rst,
     input ld_init,
-    input sh,
     input r0,
     input lsb_b,
+
     output reg [15:0] B_out
 );
 
